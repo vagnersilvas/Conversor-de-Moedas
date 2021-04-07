@@ -1,0 +1,87 @@
+body {
+    font-family: 'Roboto Mono',monospace;
+    min-height: 400px;
+    background-image: url('https://images.pexels.com/photos/6771607/pexels-photo-6771607.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background-color: #000000;
+    background-size: 200vh;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+  
+  .container {
+    text-align: center;
+    padding: 20px;
+    height: 100vh;
+  }
+  
+  .page-title {
+    color: #ff2;
+    margin: 0 0 5px;
+  }
+  
+  .page-subtitle {
+    color: green;
+    margin-top: 5px;
+  }
+  
+  .page-logo {
+    width: 200px;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: inset 2px 2px 1em gold;
+    transition: 0.8s all;
+      cursor: pointer;
+    margin-top: 20px;
+  }
+  .page-logo:hover{
+    transform: scale(1.2);
+  }
+  
+  .alura-logo {
+    width: 40px;
+    position: absolute;
+    top: 10px;
+    right:10px;
+  }
+  label{
+    color: black;
+  }
+  .container2{
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.7);
+    box-sizing: border-box;
+    padding: 15px;
+    border-radius: 5px;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    font-weight: 500;
+    font-size: 1.1rem;
+  }
+  
+  .containerReal{
+    border-top: 2px solid black;
+    padding-top: 10px;
+  }
+  input{
+    box-shadow: 0 0 0 0;
+    border: none;
+    outline: 0;
+    height: 25px;
+    border-radius: 5px;
+  }
+  input:focus{
+    box-shadow: 0 0 0 0;
+    border: none;
+    outline: 0;
+  }
+  input[type="butoom"] {
+    cursor: pointer;
+  }
+  footer{
+    color: #ffffff;
+    text-align:center;
+    position: absolute;
+    bottom: 5px;
+  }
