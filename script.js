@@ -26,3 +26,17 @@ async function currencyConverter() {
     renderCurrency.innerHTML = `${currencyFormated}`;
   }
 }
+
+async function inicializeDollarQuote() {
+  const nodeRenderDollarQuoteToday = document.querySelector('[data-dollar-quote-today]')
+  const dollarQuote = await ApiCurrency();
+  const dollarFormated = formatCurrency(dollarQuote)
+
+  nodeRenderDollarQuoteToday.innerHTML = dollarFormated
+}
+
+const btnConverter = document.querySelector('[data-btn-converter]')
+
+btnConverter.addEventListener('click', currencyConverter)
+
+document.addEventListener('DOMContentLoaded', inicializeDollarQuote)
