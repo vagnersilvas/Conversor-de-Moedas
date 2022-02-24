@@ -7,21 +7,21 @@ async function ApiCurrency() {
     .then(Number)
 }
 
-const multiplicar = (a, b) => a * b;
+const multiply = (a, b) => a * b;
 
 
-function formatCurrency(currency) {
+function formatCurrencyUSD(currency) {
   return currency.toLocaleString('en', { style: 'currency', currency: 'USD' })
 }
 
 async function currencyConverter() {
-  const inputValue = document.getElementById('dolar').value
-  const renderCurrency = document.querySelector('[data-resultado]')
+  const inputValue = document.getElementById('dollar').value
+  const renderCurrency = document.querySelector('[data-result]')
 
   const dollarQuote = await ApiCurrency();
   if (inputValue !== '') {
-    const dollar = multiplicar(dollarQuote, inputValue)
-    const currencyFormated = formatCurrency(dollar);
+    const dollar = multiply(dollarQuote, inputValue)
+    const currencyFormated = formatCurrencyUSD(dollar);
 
     renderCurrency.innerHTML = `${currencyFormated}`;
   }
@@ -30,13 +30,14 @@ async function currencyConverter() {
 async function inicializeDollarQuote() {
   const nodeRenderDollarQuoteToday = document.querySelector('[data-dollar-quote-today]')
   const dollarQuote = await ApiCurrency();
-  const dollarFormated = formatCurrency(dollarQuote)
+  const dollarFormated = formatCurrencyUSD(dollarQuote)
 
   nodeRenderDollarQuoteToday.innerHTML = dollarFormated
 }
 
-const btnConverter = document.querySelector('[data-btn-converter]')
+document
+  .querySelector('[data-btn-converter]')
+  .addEventListener('click', currencyConverter)
 
-btnConverter.addEventListener('click', currencyConverter)
-
-document.addEventListener('DOMContentLoaded', inicializeDollarQuote)
+document
+  .addEventListener('DOMContentLoaded', inicializeDollarQuote)
