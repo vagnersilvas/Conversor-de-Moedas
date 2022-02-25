@@ -10,36 +10,35 @@
 </head>
 
 <body>
-  <div class="container">
-    <h1 class="page-title">
-      Conversor de moedas
-    </h1>
-    <p class="page-subtitle">
-      Descubra os valores em dolar U$
-    </p>
-    <a href="https://alura.com.br/"><img
-        src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-conversor-de-moedas.svg"
-        class="page-logo" alt=""></a>
-    <a href="https://alura.com.br/" target="_blank">
-      <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="logo alura" class="alura-logo">
-    </a>
+  <div class="container-main">
+    <div class="container">
+      <h1 class="page-title">
+        Conversor de moedas
+      </h1>
+      <p class="page-subtitle">
+        Descubra os valores em dolar U$
+      </p>
+      <a href="https://alura.com.br/"><img
+          src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-conversor-de-moedas.svg"
+          class="page-logo" alt=""></a>
+    </div>
+
+    <h2 class="dollar-quotation">Cotação: <span data-dollar-quote-today></span></h2>
+    <div class="container-content">
+
+
+      <label for="dollar">Converter para Dólar</label>
+      <input type="number" name="number" id="dollar" placeholder="Digite um valor">
+
+
+      <p> <span data-result> </span> </p>
+
+      <input type="button" value="CONVERTER" data-btn-converter>
+    </div>
+    <footer>
+      <p class="copyright"> &copy; Copyright Imersão Dev Alura - 2021</p>
+    </footer>
   </div>
-
-  <div class="container-content">
-    <h2>Cotação: <span data-dollar-quote-today></span></h2>
-
-
-    <label for="dollar">Converter para Dólar</label>
-    <input type="number" name="number" id="dollar" placeholder="Digite um valor">
-
-
-    <p> <span data-result> </span> </p>
-
-    <input type="button" value="CONVERTER" data-btn-converter>
-  </div>
-  <footer>
-    <p class="copyright"> &copy; Copyright Imersão Dev Alura - 2021</p>
-  </footer>
 
   <script src="./script.js"></script>
 </body>
