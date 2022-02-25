@@ -7,7 +7,7 @@ async function ApiCurrency() {
     .then(Number)
 }
 
-const multiply = (a, b) => a * b;
+const divide = (a, b) => a / b;
 
 
 function formatCurrencyUSD(currency) {
@@ -15,15 +15,16 @@ function formatCurrencyUSD(currency) {
 }
 
 async function currencyConverter() {
-  const inputValue = document.getElementById('dollar').value
+  const input = document.getElementById('dollar')
   const renderCurrency = document.querySelector('[data-result]')
 
   const dollarQuote = await ApiCurrency();
-  if (inputValue !== '') {
-    const dollar = multiply(dollarQuote, inputValue)
+  if (input.value !== '') {
+    const dollar = divide(input.value, dollarQuote)
     const currencyFormated = formatCurrencyUSD(dollar);
 
     renderCurrency.innerHTML = `${currencyFormated}`;
+    input.value = ''
   }
 }
 
@@ -41,3 +42,9 @@ document
 
 document
   .addEventListener('DOMContentLoaded', inicializeDollarQuote)
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    currencyConverter()
+  }
+})
